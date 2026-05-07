@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PRAVEEN_KUMAR // DevOps Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .crt-bloom {
+            box-shadow: 0px 0px 12px rgba(0, 255, 0, 0.3);
+        }
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: #00FF00;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-code { font-family: 'Space Grotesk', monospace; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#3b4b35",
+                        "on-primary-container": "#027100",
+                        "on-secondary": "#313030",
+                        "primary-fixed": "#77ff61",
+                        "surface": "#131313",
+                        "secondary-container": "#474746",
+                        "tertiary-fixed": "#e4e2e1",
+                        "primary-fixed-dim": "#02e600",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-background": "#e5e2e1",
+                        "on-primary-fixed-variant": "#015300",
+                        "on-surface": "#e5e2e1",
+                        "primary-container": "#00ff00",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#303030",
+                        "outline": "#84967c",
+                        "surface-tint": "#02e600",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#b7b5b4",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary": "#013a00",
+                        "surface-variant": "#353534",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed": "#002200",
+                        "inverse-primary": "#026e00",
+                        "background": "#131313",
+                        "on-tertiary-container": "#616060",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#474746",
+                        "secondary": "#c8c6c5",
+                        "tertiary": "#faf8f7",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131313",
+                        "surface-container": "#201f1f",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-bright": "#3a3939",
+                        "on-surface-variant": "#b9ccaf",
+                        "on-error": "#690005",
+                        "primary": "#eaffde",
+                        "surface-container-highest": "#353534",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#dedbdb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "container-max": "1200px",
+                        "margin": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "code-md": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "code-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="bg-surface docked full-width top-0 sticky z-50 border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-margin py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" style='font-variation-settings: "FILL" 1;'>terminal</span>
+<h1 class="font-headline-sm text-headline-sm font-bold tracking-tighter text-primary-container uppercase">PRAVEEN_KUMAR</h1>
+</div>
+<nav class="hidden md:flex gap-gutter">
+<a class="font-code-md text-code-md text-primary-container border-b-2 border-primary-container cursor-pointer active:opacity-80" href="#hero">OVERVIEW</a>
+<a class="font-code-md text-code-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-80" href="#skills">RESOURCES</a>
+<a class="font-code-md text-code-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-80" href="#experience">LOGS</a>
+</nav>
+<div class="font-headline-sm text-headline-sm font-code-md text-code-md text-primary-container">
+                STATUS: ACTIVE
+            </div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin space-y-32 py-16">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center" id="hero">
+<div class="lg:col-span-7 space-y-8">
+<div class="space-y-4">
+<span class="font-code-md text-code-md text-primary-container tracking-widest px-2 py-1 border border-primary-container inline-block">SYSTEM_INIT_SUCCESS</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">DevOps Team Leader</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        DevOps Engineer with 8+ years of experience in automating infrastructure, managing CI/CD pipelines, and driving cloud-native adoption on AWS. Skilled in Kubernetes, Docker, Terraform, and observability stacks (Grafana, Loki, Tempo, Mimir).
+                    </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary-container text-on-primary font-code-md text-code-md px-8 py-4 crt-bloom hover:opacity-90 transition-all cursor-pointer font-bold border-none" href="https://github.com/praveenraghav96/" target="_blank">
+                        VIEW GITHUB
+                    </a>
+<button class="border border-primary-container text-primary-container font-code-md text-code-md px-8 py-4 hover:bg-primary-container/10 transition-all cursor-pointer font-bold">
+                        DOWNLOAD RESUME
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-5">
+<div class="bg-surface-container-lowest border border-outline-variant rounded shadow-2xl overflow-hidden font-code-md">
+<div class="bg-surface-variant px-4 py-2 flex items-center justify-between border-b border-outline-variant">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-error/40"></div>
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+<div class="w-3 h-3 rounded-full bg-on-primary-container/40"></div>
+</div>
+<span class="text-xs text-on-surface-variant">bash — 80x24</span>
+</div>
+<div class="p-6 text-on-surface-variant space-y-2 min-h-[300px] break-all">
+<p class=""><span class="text-primary-container">user@praveen-pkg:</span><span class="text-secondary">~</span>$ whoami</p>
+<p class="text-on-surface">praveen_kumar_devops_lead</p>
+<p class=""><span class="text-primary-container">user@praveen-pkg:</span><span class="text-secondary">~</span>$ curl ipinfo.io/city</p>
+<p class="text-primary-fixed-dim">Gurugram, India</p>
+<p class=""><span class="text-primary-container">user@praveen-pkg:</span><span class="text-secondary">~</span>$ kubectl get nodes</p>
+<div class="grid grid-cols-3 gap-2 text-xs">
+<span class="text-primary-container">NAME</span>
+<span class="text-primary-container">STATUS</span>
+<span class="text-primary-container">ROLES</span>
+<span class="">aws-eks-node-1</span>
+<span class="text-primary-container">Ready</span>
+<span class="">worker</span>
+<span class="">aws-eks-node-2</span>
+<span class="text-primary-container">Ready</span>
+<span class="">worker</span>
+</div>
+<p class=""><span class="text-primary-container">user@praveen-pkg:</span><span class="text-secondary">~</span>$ terraform version</p>
+<p class="text-secondary-fixed">Terraform v1.5.0 on linux_amd64</p>
+<p class=""><span class="text-primary-container">user@praveen-pkg:</span><span class="text-secondary">~</span>$<span class="terminal-cursor"></span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills & Tech Stack -->
+<section class="space-y-12" id="skills">
+<div class="border-l-4 border-primary-container pl-6">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Tech_Stack_Audit</h3>
+<p class="font-code-md text-code-md text-on-surface-variant uppercase">Infrastructure as Code &amp; Cloud Architecture</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter">
+<!-- Skill Card 1 -->
+<div class="bg-surface-container border border-outline-variant p-6 hover:border-primary-container transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="cloud">cloud</span>
+<span class="font-code-md text-xs text-on-surface-variant">LVL: EXPERT</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">AWS</h4>
+<p class="text-sm text-on-surface-variant font-code-md">EC2, S3, RDS, Lambda, EKS clusters.</p>
+</div>
+<!-- Skill Card 2 -->
+<div class="bg-surface-container border border-outline-variant p-6 hover:border-primary-container transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="box">package</span>
+<span class="font-code-md text-xs text-on-surface-variant">LVL: MASTER</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">Containers</h4>
+<p class="text-sm text-on-surface-variant font-code-md">Docker &amp; Kubernetes orchestration.</p>
+</div>
+<!-- Skill Card 3 -->
+<div class="bg-surface-container border border-outline-variant p-6 hover:border-primary-container transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="rebase_edit">rebase_edit</span>
+<span class="font-code-md text-xs text-on-surface-variant">LVL: SENIOR</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">CI/CD</h4>
+<p class="text-sm text-on-surface-variant font-code-md">GoCD, Jenkins, GitHub Actions.</p>
+</div>
+<!-- Skill Card 4 -->
+<div class="bg-surface-container border border-outline-variant p-6 hover:border-primary-container transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="terminal">terminal</span>
+<span class="font-code-md text-xs text-on-surface-variant">LVL: EXPERT</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">IAC</h4>
+<p class="text-sm text-on-surface-variant font-code-md">Terraform, Ansible automation.</p>
+</div>
+<!-- Skill Card 5 -->
+<div class="bg-surface-container border border-outline-variant p-6 hover:border-primary-container transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="monitoring">monitoring</span>
+<span class="font-code-md text-xs text-on-surface-variant">LVL: MASTER</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">Metrics</h4>
+<p class="text-sm text-on-surface-variant font-code-md">Grafana, Prometheus, Datadog, ELK.</p>
+</div>
+</div>
+</section>
+<!-- Experience & Projects -->
+<section class="space-y-12" id="experience">
+<div class="flex justify-between items-end border-b border-outline-variant pb-6">
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Deployment_Logs</h3>
+<p class="font-code-md text-code-md text-on-surface-variant">Career progression and architectural impact</p>
+</div>
+</div>
+<div class="space-y-8 relative before:content-[''] before:absolute before:left-[11px] before:top-0 before:bottom-0 before:w-px before:bg-outline-variant">
+<!-- Experience Item 1 -->
+<div class="pl-12 relative">
+<div class="absolute left-0 top-2 w-[24px] h-[24px] bg-background border-2 border-primary-container rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-primary-container crt-bloom"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4">
+<span class="font-code-md text-sm text-primary-container">FEB 2026 — PRESENT</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 break-words">DevOps Team Leader</h4>
+<p class="text-on-surface-variant font-code-md">Payoneer</p>
+</div>
+<div class="lg:col-span-8 bg-surface-container p-6 border border-outline-variant">
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li class="flex gap-3">
+<span class="text-primary-container font-bold">&gt;&gt;</span>
+<span class="">Managing a Team of <span class="text-primary-container font-code-md">5 DEVOPS MEMBERS</span>.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-primary-container font-bold">&gt;&gt;</span>
+<span class="">Handling Infrastructure across <span class="text-primary-container font-code-md">AWS, AZURE AND ON-PREM</span> systems.</span>
+</li>
+</ul>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Leadership</span>
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Hybrid Cloud</span>
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Azure</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Experience Item 2 -->
+<div class="pl-12 relative">
+<div class="absolute left-0 top-2 w-[24px] h-[24px] bg-background border-2 border-outline-variant rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-outline-variant"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4">
+<span class="font-code-md text-sm text-on-surface-variant">JUL 2023 — JAN 2026</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 break-words">Lead DevOps Engineer</h4>
+<p class="text-on-surface-variant font-code-md">Aspire</p>
+</div>
+<div class="lg:col-span-8 bg-surface-container-low p-6 border border-outline-variant">
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant"><li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Led a team of <span class="text-primary-container font-code-md">5 DevOps engineers</span>, driving quarterly goal-setting, daily scrum meetings, and providing structured monthly feedback.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Led the complete migration of logging and tracing infrastructure from <span class="text-primary-container font-code-md">Datadog to self-hosted Grafana OSS</span> (Loki, Tempo, Mimir) on Kubernetes, resulting in <span class="text-primary-container font-code-md">~40% COST SAVINGS</span>.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Deployed and managed <span class="text-primary-container font-code-md">AI-driven applications</span> in production, including hosting <span class="text-primary-container font-code-md">Onyx and n8n</span> for production workflows.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Implemented and operated <span class="text-primary-container font-code-md">observability stack</span> by hosting MCP servers for Grafana, ensuring reliability of AI workloads.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Orchestrated the migration of <span class="text-primary-container font-code-md">PHP and Golang services</span> from AWS ECS to <span class="text-primary-container font-code-md">Amazon EKS</span>, enhancing scalability.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Designed and implemented CI/CD pipelines in <span class="text-primary-container font-code-md">GoCD</span>, migrating from GitHub Actions to support a “build once, deploy multiple times” model.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Devised and implemented <span class="text-primary-container font-code-md">canary deployment strategies</span> using Kubernetes, with percentage based promotion.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Achieved over <span class="text-primary-container font-code-md">40% reduction</span> in container build time through build layer caching and parallelized builds.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Drove <span class="text-primary-container font-code-md">cloud cost optimization</span> by rightsizing resources and tuning autoscaling policies.</span>
+</li></ul>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Grafana</span>
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">EKS</span>
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Cost Optimization</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Experience Item 3 -->
+<div class="pl-12 relative">
+<div class="absolute left-0 top-2 w-[24px] h-[24px] bg-background border-2 border-outline-variant rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-outline-variant"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4">
+<span class="font-code-md text-sm text-on-surface-variant">NOV 2020 — JUN 2023</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 break-words">Staff DevOps Engineer</h4>
+<p class="text-on-surface-variant font-code-md">SIMPL Inc</p>
+</div>
+<div class="lg:col-span-8 bg-surface-container-low p-6 border border-outline-variant">
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant"><li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Managed a team of <span class="text-primary-container font-code-md">5 DevOps engineers</span> and worked on setting up quarterly goals.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Automated the creation and configuration of <span class="text-primary-container font-code-md">multiple environments</span> ensuring consistency and reproducibility.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Setup the <span class="text-primary-container font-code-md">monitoring, logging, tracing and alerting</span> for resources on AWS.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Secured infrastructure by <span class="text-primary-container font-code-md">monitoring and remedying</span> any security threats.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Designed and implemented <span class="text-primary-container font-code-md">serverless architecture</span> resulting in improved performance and cost saving.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Collaborated with Engineering team to optimize <span class="text-primary-container font-code-md">deployment and scaling</span> of application.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Participated in <span class="text-primary-container font-code-md">on-call rotations</span> for incident management on L1 and L2 level.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Managed <span class="text-primary-container font-code-md">automated secure network architecture</span> with performance tuning.</span>
+</li></ul>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Serverless</span>
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Security</span>
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Networking</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Experience Item 4: Flux7 -->
+<div class="pl-12 relative">
+<div class="absolute left-0 top-2 w-[24px] h-[24px] bg-background border-2 border-outline-variant rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-outline-variant"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4">
+<span class="font-code-md text-sm text-on-surface-variant">JUL 2019 — OCT 2020</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 break-words">DevOps Engineer</h4>
+<p class="text-on-surface-variant font-code-md">Flux7, an NTT DATA Company</p>
+</div>
+<div class="lg:col-span-8 bg-surface-container-low p-6 border border-outline-variant">
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Build and manage IAC for hardening AWS Accounts using <span class="text-primary-container font-code-md">Control Tower, System manager, CloudTrail, Config, Trust Advisor and Lambda</span>.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Accountable for working closely with clients to understand, review and implement architecture as per the requirements.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Build <span class="text-primary-container font-code-md">CI/CD pipeline</span> to automate various deploy process in AWS Environment.</span>
+</li>
+</ul>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">AWS</span>
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">IaC</span>
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Remote</span>
+</div>
+</div>
+</div>
+</div><!-- Experience Item 5: Coral Blockchain -->
+<div class="pl-12 relative">
+<div class="absolute left-0 top-2 w-[24px] h-[24px] bg-background border-2 border-outline-variant rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-outline-variant"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4">
+<span class="font-code-md text-sm text-on-surface-variant">JAN 2019 — JUN 2019</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 break-words">DevOps Engineer</h4>
+<p class="text-on-surface-variant font-code-md">Coral Blockchain</p>
+</div>
+<div class="lg:col-span-8 bg-surface-container-low p-6 border border-outline-variant">
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Manage, design, analyze and implement <span class="text-primary-container font-code-md">Enterprise Blockchain Solutions</span> in domains like Healthcare, Water Supply and Government Processes.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Build and Deploy Enterprise Blockchain application on <span class="text-primary-container font-code-md">AWS</span>.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Mentoring new interns and helping them navigate through problems to account for the deliverables on a daily basis.</span>
+</li>
+</ul>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Blockchain</span>
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Mentorship</span>
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Remote</span>
+</div>
+</div>
+</div>
+</div><!-- Experience Item 6: DataGrokr -->
+<div class="pl-12 relative">
+<div class="absolute left-0 top-2 w-[24px] h-[24px] bg-background border-2 border-outline-variant rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-outline-variant"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4">
+<span class="font-code-md text-sm text-on-surface-variant">OCT 2017 — DEC 2018</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 break-words">DevOps Engineer</h4>
+<p class="text-on-surface-variant font-code-md">DataGrokr Analytics Private Limited</p>
+</div>
+<div class="lg:col-span-8 bg-surface-container-low p-6 border border-outline-variant">
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Accountable for working closely with clients to understand, review and implement architecture as per the requirements.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Actively manage, improve, and monitor cloud infrastructure on <span class="text-primary-container font-code-md">AWS, EC2, S3, and RDS</span>, including backups, patches, and scaling.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-on-surface-variant font-bold">&gt;&gt;</span>
+<span class="">Handled tasks independently and collaboratively within a team; mentored new interns.</span>
+</li>
+</ul>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Cloud Operations</span>
+<span class="text-[10px] font-code-md border border-outline-variant px-2 py-1 uppercase">Bengaluru</span>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<!-- NEW: Certification Logs Section -->
+<section class="space-y-12" id="certifications">
+<div class="border-l-4 border-primary-container pl-6">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Certification_Logs</h3>
+<p class="font-code-md text-code-md text-on-surface-variant uppercase">Validated Cloud Expertise</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant p-6 flex items-center gap-6 group hover:border-primary-container transition-all">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<div>
+<h4 class="font-code-md text-on-surface font-bold">AWS Certified DevOps - Professional</h4>
+<p class="text-xs text-on-surface-variant font-code-md opacity-60">ID: AWS-CERT-DV-PRO</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-6 flex items-center gap-6 group hover:border-primary-container transition-all">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<div>
+<h4 class="font-code-md text-on-surface font-bold">AWS Certified Developer - Associate</h4>
+<p class="text-xs text-on-surface-variant font-code-md opacity-60">ID: AWS-CERT-DEV-ASO</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-6 flex items-center gap-6 group hover:border-primary-container transition-all">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<div>
+<h4 class="font-code-md text-on-surface font-bold">AWS Certified SysOps Administrator - Associate</h4>
+<p class="text-xs text-on-surface-variant font-code-md opacity-60">ID: AWS-CERT-SYS-ASO</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-6 flex items-center gap-6 group hover:border-primary-container transition-all">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<div>
+<h4 class="font-code-md text-on-surface font-bold">AWS Certified Solutions Architect - Associate</h4>
+<p class="text-xs text-on-surface-variant font-code-md opacity-60">ID: AWS-CERT-SA-ASO</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter border border-outline-variant" id="contact">
+<div class="lg:col-span-5 bg-surface-container p-12 space-y-8">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Establish_Link</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Ready to scale your next project? Drop a message to initialize communication. I'm usually responsive within 24 hours.
+                </p>
+<div class="space-y-4">
+<a class="flex items-center gap-4 group cursor-pointer" href="mailto:praveenraghav01@gmail.com">
+<div class="w-10 h-10 border border-primary-container flex items-center justify-center text-primary-container group-hover:bg-primary-container group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<span class="font-code-md text-on-surface">praveenraghav01@gmail.com</span>
+</a>
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="w-10 h-10 border border-primary-container flex items-center justify-center text-primary-container group-hover:bg-primary-container group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<span class="font-code-md text-on-surface">Gurugram, India // Remote</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 p-12 bg-surface-container-lowest">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-2">
+<label class="font-code-md text-xs text-primary-container uppercase tracking-widest">Sender_ID</label>
+<input class="w-full bg-surface border border-outline-variant p-4 text-on-surface focus:border-primary-container focus:ring-0 font-code-md placeholder:text-surface-variant" placeholder="&gt; NAME" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-code-md text-xs text-primary-container uppercase tracking-widest">Protocol_Address</label>
+<input class="w-full bg-surface border border-outline-variant p-4 text-on-surface focus:border-primary-container focus:ring-0 font-code-md placeholder:text-surface-variant" placeholder="&gt; EMAIL" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-code-md text-xs text-primary-container uppercase tracking-widest">Transmission_Payload</label>
+<textarea class="w-full bg-surface border border-outline-variant p-4 text-on-surface focus:border-primary-container focus:ring-0 font-code-md placeholder:text-surface-variant" placeholder="&gt; MESSAGE_DATA..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary font-code-md font-bold p-4 hover:opacity-90 transition-all crt-bloom" type="submit">
+                        EXECUTE_SEND
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest full-width border-t border-outline-variant">
+<div class="w-full px-margin py-gutter flex flex-col md:flex-row justify-between items-center gap-4 max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm text-primary-container font-bold tracking-tighter">
+                PRAVEEN_KUMAR
+            </div>
+<div class="flex flex-wrap justify-center gap-gutter">
+<a class="font-code-md text-code-md font-label-sm text-label-sm text-on-surface-variant hover:text-primary-fixed transition-all duration-300" href="https://github.com/praveenraghav96/" target="_blank">GITHUB</a>
+<a class="font-code-md text-code-md font-label-sm text-label-sm text-on-surface-variant hover:text-primary-fixed transition-all duration-300" href="https://linkedin.com/in/praveenraghav01/" target="_blank">LINKEDIN</a>
+<a class="font-code-md text-code-md font-label-sm text-label-sm text-on-surface-variant hover:text-primary-fixed transition-all duration-300" href="#">DOCKER_HUB</a>
+<a class="font-code-md text-code-md font-label-sm text-label-sm text-on-surface-variant hover:text-primary-fixed transition-all duration-300" href="mailto:praveenraghav01@gmail.com">EMAIL</a>
+</div>
+<div class="font-code-md text-code-md font-label-sm text-label-sm text-on-surface-variant opacity-60">
+                © 2024 PRAVEEN_KUMAR // SYSTEM_OPERATIONAL
+            </div>
+</div>
+</footer>
+</body></html>
